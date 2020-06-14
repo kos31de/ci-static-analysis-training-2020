@@ -8,3 +8,6 @@ workflows:
   "Hello Workflow":
       jobs:
         - hello/hello-build
+        - slack/approval-notification:
+          message: Pending approval
+          webhook: webhook
