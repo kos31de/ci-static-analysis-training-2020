@@ -5,8 +5,10 @@ jobs:
     steps:
       - slack/notify:
           color: '#42e2f4'
-          message: "Hey ${CIRCLE_USERNAME}, ${CIRCLE_JOB} failed: ${CIRCLE_BUILD_URL}"
+          message: "Hey ${CIRCLE_USERNAME}, ${CIRCLE_JOB}, ${CIRCLE_BUILD_URL}"
           webhook: '${SLACK_WEBHOOK}'
+          success_message:
+          failure_message:
       - run:
           command: |
             echo "hello world~"
