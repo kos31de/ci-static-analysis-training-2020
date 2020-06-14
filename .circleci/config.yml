@@ -13,7 +13,7 @@ jobs:
       - run:
           command: |
             echo "hello world~"
-            exit 1
+
 workflows:
   version: 2
   btd:
