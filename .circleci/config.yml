@@ -2,6 +2,10 @@ version: 2.1
 
 orbs:
   slack: circleci/slack@3.3.0
+  hello: circleci/hello-build@0.0.7 # circleci/buildpack-deps Docker イメージを使います
+
+workflows:
+  "Hello Workflow":
 
 jobs:
   deploy-and-notify:
