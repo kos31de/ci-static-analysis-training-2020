@@ -1,21 +1,20 @@
-version: 2.1
-orbs:
-  slack: circleci/slack@3.4.2
 jobs:
   build:
     docker:
-      - image: circleci/python
+      - image: circleci/ruby
     steps:
       - slack/notify:
           color: '#42e2f4'
           message: "Hey ${CIRCLE_USERNAME}, ${CIRCLE_JOB} failed: ${CIRCLE_BUILD_URL}"
-          webhook: 'https://hooks.slack.com/services/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'
+          webhook: '${SLACK_WEBHOOK}'
       - run:
           command: |
             echo "hello world~"
 
+orbs:
+  slack: circleci/slack@3.4.2
+version: 2.1
 workflows:
-  version: 2
-  btd:
+  my-workflow:
     jobs:
     - build 
